@@ -1,0 +1,7 @@
+Add this as an example of how to do the text animations
+    For the HTML
+    <h1>
+        <teximate #teximate [text]="text" [enter]="enterAnimation"></teximate>
+    </h1>
+
+    <button (click)="teximate.enterPlayer.play()">Play</button>
