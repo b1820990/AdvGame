@@ -1,0 +1,22 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+CREATE SCHEMA IF NOT EXISTS `cmpe165` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `cmpe165` ;
+
+DROP TABLE IF EXISTS `cmpe172`.`character` ;
+CREATE TABLE IF NOT EXISTS `cmpe172`.`character` (
+  `character_id` INT NOT NULL,
+  `character_name` VARCHAR(80) NULL,
+  `is_agressive` BIT NOT NULL,
+  `character_health` INT NOT NULL,
+  PRIMARY KEY (`character_id`));
+
+
+DROP TABLE IF EXISTS `cmpe172`.`rooms` ;
+CREATE TABLE IF NOT EXISTS `cmpe172`.`rooms` (
+  `room_id` INT NOT NULL,
+  `room_name` VARCHAR(80) NULL,
+  PRIMARY KEY (`room_id`));    
+
