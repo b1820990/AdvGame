@@ -9,6 +9,9 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { TeximateModule } from 'ngx-teximate';
 
+
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,8 @@ import { TeximateModule } from 'ngx-teximate';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TeximateModule
+    TeximateModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

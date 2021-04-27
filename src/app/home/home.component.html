@@ -5,4 +5,18 @@
       <li><a routerLink = '/contact'>Contact</a></li>
       <li><a routerLink = '/about'>About</a></li>
     </ul>
-    </body>
+    <div #canvasWrapper class="canvas-wrapper" (window:resize)="draw()">
+      <canvas id="wfcanvas" #canvasId
+         [height]="canvasWrapper.offsetHeight" 
+         [width]="canvasWrapper.offsetWidth">
+      </canvas>
+    </div>
+    <div [style.background-image]="'url(/assets/images/{{imageName}})'"></div>
+    <div [style.background-image]="'url(/assets/images/castle.gif)'" [style.background-size]= "'cover'" >
+      <div width="100vh" height="100vh" style="opacity: .5; background-color: black;">
+        Hello
+      </div>
+    </div>
+    <!--img src="/assets/images/castle.gif" height="100%" width="100%"/-->
+</body>
+
