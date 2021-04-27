@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { TeximateModule } from 'ngx-teximate';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TeximateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
