@@ -1,5 +1,6 @@
 export class Character {
     private name!: String;
+    
     constructor(name:String){
         this.name = name;
     }
