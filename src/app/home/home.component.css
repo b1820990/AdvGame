@@ -328,3 +328,11 @@ li a:hover:not(.active) {
     border: 2px #111;
     background-color: lightgray;
   }
+
+  .boxed{
+    border: 2px solid black;
+  }
+
+  .textFont {
+    src: url(https://fonts.google.com/specimen/Press+Start+2P#standard-styles)
+  }

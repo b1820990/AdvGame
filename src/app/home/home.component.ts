@@ -22,5 +22,56 @@ export class HomeComponent implements OnInit {
     console.log("canvas size: ", ctx.canvas.width, ctx.canvas.height);
   }
 
+  next: boolean = false;
+  first: boolean = true;
+  keyMap(e: any){
+    if(e.keyCode == '37'){
+      console.log("Left Key");
+      this.west();      
+    }
+    else if(e.keyCode == '38' ){
+      console.log("Up Key");
+      this.north();
+    }
+    else if(e.keyCode == '39'){
+      console.log("Right key");
+      this.east();
+    }
+    else if(e.keyCode == '40'){
+      console.log("Down key");
+      if(this.first){
+        this.south();
+      }
+      else if(this.next){
+        this.southNext();
+      }
+    }
+    else{
+      console.log("Others");
+    }
+  }
+
+  north(){
+    this.roomNum = 0;
+  }
+  south(){
+    this.roomNum = 1;
+    this.next = true;
+    this.first = false;
+  }
+  east(){
+    this.roomNum = 2;
+  }
+  west(){
+    this.roomNum = 2;
+  }
+  southNext(){
+    this.roomNum = 3;
+  }
+
   imageName:String = "castle.gif";
+
+  rooms = ['/assets/images/start.png', '/assets/images/next.png', '/assets/images/start2.png','/assets/images/end.png'];
+  roomNum: number = 0;
 }
+

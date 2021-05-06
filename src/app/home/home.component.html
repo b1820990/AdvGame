@@ -11,11 +11,23 @@
          [width]="canvasWrapper.offsetWidth">
       </canvas>
     </div>
-    <div [style.background-image]="'url(/assets/images/{{imageName}})'"></div>
+    <!-- <div [style.background-image]="'url(/assets/images/{{imageName}})'"></div>
     <div [style.background-image]="'url(/assets/images/castle.gif)'" [style.background-size]= "'cover'" >
-      <div width="100vh" height="100vh" style="opacity: .5; background-color: black;">
+      <div width="100v" height="100vh" style="opacity: .5; background-color: black; width: 500px; height: 500px; object-fit: scale-down;">
         Hello
       </div>
+    </div> -->
+
+    <ng-container>
+      <img [src]="rooms[roomNum]" style="height:500px; width:500px"/>
+     </ng-container>
+
+    <br>
+    <div class = "boxed" style = "font: textFont">Press Up Key: To Move North <br>          
+      Press Down Key: To Move South <br>
+      Press Right Key: To Move East <br> 
+      Press Left key: To Move West <br>
+      <input (keydown)="keyMap($event)">
     </div>
     <!--img src="/assets/images/castle.gif" height="100%" width="100%"/-->
 </body>
