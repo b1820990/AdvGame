@@ -17,7 +17,9 @@ export class Room {
         this.options = options
         this.character = character;
     }
-    
+    public getImagePath(): String{
+        return this.imagePath;
+    }
     //Setters and getters
     public getName(): String {
         return this.name;
