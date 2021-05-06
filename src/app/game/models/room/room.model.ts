@@ -3,19 +3,23 @@ import { Character } from "../character/character.model";
 
 export class Room {
     private name!: String;
-    private item!: Item;
-    private description!: String; 
-    private options!: String[];
-    private character!:Character;
+    private imagePath!:any;
+    private item?: Item;
+    private description?: String; 
+    private options?: String[];
+    private character?:Character;
 
-    constructor(name: String, item: Item, description:String, options:String[], character:Character){
+    constructor(name: String, imagePath:String,  item?: Item, description?:String, options?:String[], character?:Character){
         this.name = name;
+        this.imagePath = imagePath;
         this.item = item;
         this.description = description; 
         this.options = options
         this.character = character;
     }
-    
+    public getImagePath(): String{
+        return this.imagePath;
+    }
     //Setters and getters
     public getName(): String {
         return this.name;
@@ -26,7 +30,7 @@ export class Room {
     }
 
     public getItem(): Item {
-        return this.item;
+        return this.item!;
     }
 
     public setItem(item: Item): void {
@@ -34,7 +38,7 @@ export class Room {
     }
 
     public getDescription(): String {
-        return this.description;
+        return this.description!;
     }
 
     public setDescription(description: String): void {
@@ -42,14 +46,14 @@ export class Room {
     }
 
     public getOptions(): String[] {
-        return this.options;
+        return this.options!;
     }
 
     public setOptions(options: String[]): void {
         this.options = options;
     }
     public getCharacter(): Character {
-        return this.character ;
+        return this.character!;
     }
 }
 
