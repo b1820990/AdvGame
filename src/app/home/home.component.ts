@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { fromEventPattern } from 'rxjs';
 import { LocalStorageService } from 'src/services/local-storage/local-storage.service';
-
+import { ROOMS } from "src/app/game/GAME";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,12 +14,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  rooms = ROOMS;
 
   draw() {
 
   }
-
+  roomNum: number = 0;
   next: boolean = false;
   first: boolean = true;
   keyMap(e: any){
@@ -36,12 +37,7 @@ export class HomeComponent implements OnInit {
     }
     else if(e.keyCode == '40'){
       console.log("Down key");
-      if(this.first){
-        this.south();
-      }
-      else if(this.next){
-        this.southNext();
-      }
+      this.south();
     }
     else{
       console.log("Others");
@@ -49,26 +45,22 @@ export class HomeComponent implements OnInit {
   }
 
   north(){
-    this.roomNum = 0;
+    this.roomNum = 1;
   }
   south(){
-    this.roomNum = 1;
-    this.next = true;
-    this.first = false;
+    this.roomNum = 2;
   }
   east(){
-    this.roomNum = 2;
+    this.roomNum = 3;
   }
   west(){
-    this.roomNum = 2;
+    this.roomNum = 4;
   }
   southNext(){
-    this.roomNum = 3;
+    this.roomNum = 5;
   }
 
   imageName:String = "castle.gif";
-
-  rooms = ['/assets/images/start.png', '/assets/images/next.png', '/assets/images/start2.png','/assets/images/end.png'];
-  roomNum: number = 0;
+ 
 }
 

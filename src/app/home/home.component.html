@@ -19,7 +19,7 @@
     </div> -->
 
     <ng-container>
-      <img [src]="rooms[roomNum]" style="height:500px; width:500px"/>
+      <img [src]="rooms[roomNum].getImagePath()" style="height:500px; width:500px"/>
      </ng-container>
 
     <br>
@@ -29,7 +29,7 @@
       Press Left key: To Move West <br>
       <input (keydown)="keyMap($event)">
     </div>
-    <app-tests> </app-tests>
+    <!-- <app-tests> </app-tests> -->
     <!--img src="/assets/images/castle.gif" height="100%" width="100%"/-->
 </body>
 
