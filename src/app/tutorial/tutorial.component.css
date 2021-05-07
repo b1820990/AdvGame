@@ -358,6 +358,7 @@ li a:hover:not(.active) {
     text-align: center;
     background-color: #474e5d;
     color: white;
+    font-family: '2Player';
   }
   
   .container {
@@ -380,4 +381,10 @@ li a:hover:not(.active) {
       width: 100%;
       display: block;
     }
+  }
+
+  @font-face {
+    font-family: '2Player';
+    src: url(/assets/fonts/PressStart2P-Regular.ttf) format("truetype");
+    font-weight: 100;
   }

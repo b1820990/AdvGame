@@ -330,9 +330,21 @@ li a:hover:not(.active) {
   }
 
   .boxed{
+    padding: 10px;
     border: 2px solid black;
+    background-color: #eeeeee;
+    font-family: '2Player';
   }
 
-  .textFont {
-    src: url(https://fonts.google.com/specimen/Press+Start+2P#standard-styles)
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  @font-face {
+    font-family: '2Player';
+    src: url(/assets/fonts/PressStart2P-Regular.ttf) format("truetype");
+    font-weight: 100;
   }

@@ -1,16 +1,17 @@
-<body>
+<body style ="background-color: #474e5d;">
     <ul>
       <li><a class="active" routerLink = '/home'>Home</a></li>
       <li><a routerLink = '/tutorial'>Tutorial</a></li>
       <li><a routerLink = '/contact'>Contact</a></li>
       <li><a routerLink = '/about'>About</a></li>
     </ul>
-    <div #canvasWrapper class="canvas-wrapper" (window:resize)="draw()">
+    <br>
+    <!-- <div #canvasWrapper class="canvas-wrapper" (window:resize)="draw()">
       <canvas id="wfcanvas" #canvasId
          [height]="canvasWrapper.offsetHeight" 
          [width]="canvasWrapper.offsetWidth">
-      </canvas>
-    </div>
+      </canvas> -->
+    <!-- </div> -->
     <!-- <div [style.background-image]="'url(/assets/images/{{imageName}})'"></div>
     <div [style.background-image]="'url(/assets/images/castle.gif)'" [style.background-size]= "'cover'" >
       <div width="100vh" height="100vh" style="opacity: .5; background-color: black;">
@@ -18,16 +19,16 @@
       </div>
     </div> -->
 
-    <ng-container>
-      <img [src]="rooms[roomNum].getImagePath()" style="height:500px; width:500px"/>
+    <ng-container >
+      <img class="center" [src]="rooms[roomNum].getImagePath()" style="height:500px; width:500px"/>
      </ng-container>
 
     <br>
-    <div class = "boxed" style = "font: textFont">Press Up Key: To Move North <br>          
+    <div class = "boxed"><br> Press Up Key: To Move North <br>          
       Press Down Key: To Move South <br>
       Press Right Key: To Move East <br> 
-      Press Left key: To Move West <br>
-      <input (keydown)="keyMap($event)">
+      Press Left key: To Move West <br> <br>
+      <input (keydown)="keyMap($event)" placeholder="Click then make selection">
     </div>
     <!-- <app-tests> </app-tests> -->
     <!--img src="/assets/images/castle.gif" height="100%" width="100%"/-->
