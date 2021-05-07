@@ -8,14 +8,16 @@ export class Room {
     private description?: String; 
     private options?: String[];
     private character?:Character;
+    private isVisited?:boolean;
 
-    constructor(name: String, imagePath:String,  item?: Item, description?:String, options?:String[], character?:Character){
+    constructor(name: String, imagePath:String,  item?: Item, description?:String, options?:String[], character?:Character, isVisited?: boolean){
         this.name = name;
         this.imagePath = imagePath;
         this.item = item;
         this.description = description; 
         this.options = options
         this.character = character;
+        this.isVisited = isVisited;
     }
     public getImagePath(): String{
         return this.imagePath;
@@ -54,6 +56,9 @@ export class Room {
     }
     public getCharacter(): Character {
         return this.character!;
+    }
+    public getVisit(): boolean{
+        return this.isVisited!; 
     }
 }
 
