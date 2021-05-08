@@ -47,19 +47,19 @@ export class HomeComponent implements OnInit {
   }
 
   north(){
-    this.roomNum = 1;
+    this.roomNum = 0;
   }
   south(){
-    this.roomNum = 2;
+    this.roomNum = 1;
   }
   east(){
-    this.roomNum = 3;
+    this.roomNum = 2;
   }
   west(){
-    this.roomNum = 4;
+    this.roomNum = 3;
   }
   southNext(){
-    this.roomNum = 5;
+    this.roomNum = 4;
   }
 
   imageName:String = "castle.gif";
