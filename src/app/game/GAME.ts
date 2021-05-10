@@ -112,3 +112,6 @@ const room5Options:Array<any> =[
     {m:"Enter the southern passage.", room:ROOMS[1]}
 
 ] 
+
+export const dialogue: Array<any> = [roomStartOptions, room1Options,
+     room2Options, room3Options, room4Options, room5Options]

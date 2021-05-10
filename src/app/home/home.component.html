@@ -30,12 +30,12 @@ shut the fuck up
      </ng-container>
 
     <br>
-    <div class = "boxed"><br> Press Up Key: To Move North <br>          
-      Press Down Key: To Move South <br>
-      Press Right Key: To Move East <br> 
-      Press Left key: To Move West <br> <br>
-      <input (keydown)="keyMap($event)" placeholder="Click then make selection">
-    </div>
+    <ul class = "boxed" >
+    <li  *ngFor = "let option of options; let i = index" > 
+     <br>{{option.option}}<br>
+    </li>
+    <input (keydown)="keyMap($event)" placeholder="Click then make selection">
+    </ul>
     <!-- <app-tests> </app-tests> -->
     <!--img src="/assets/images/castle.gif" height="100%" width="100%"/-->
 </body>

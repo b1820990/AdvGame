@@ -16,6 +16,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+options: any[] = [{"option": "Option1"}, {"option": "Option2"},
+ {"option": "Option3"}, {"option": "Option4"}, {"option": "Back"}];
+
+  
   rooms = ROOMS;
 
   draw() {
