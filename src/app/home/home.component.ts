@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { fromEventPattern } from 'rxjs';
 import { LocalStorageService } from 'src/services/local-storage/local-storage.service';
-import { ROOMS } from "src/app/game/GAME";
+import { ROOMS} from "src/app/game/GAME";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

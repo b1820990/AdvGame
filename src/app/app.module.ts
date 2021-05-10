@@ -9,7 +9,6 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { TeximateModule } from 'ngx-teximate';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { FormsModule } from '@angular/forms';
 import { TestsComponent } from './tests/tests.component';
 

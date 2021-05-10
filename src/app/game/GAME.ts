@@ -7,7 +7,7 @@ import { Room } from "./models/room/room.model";
 
 
 
-export const CHARACTERS: Array<Character> = [
+const CHARACTERS: Array<Character> = [
     new Character("Ebed"),
     new Character("Saturos"),
     new Character("Shenarah"),
@@ -37,7 +37,7 @@ export const ITEMS: Item[] = [
 
 
 const roomStartOptions:Array<any> =[
-    {m:"Enter the northern passage."}
+    {m:"Enter the northern passage.", room: ROOMS[1]}
 ] 
 
 
@@ -57,9 +57,10 @@ const room2Options:Array<any> =[
         ]
     
     },
+    {m:"Enter the western passage.",room: ROOMS[1]},
     {label:"ok", m:"I will see to your daughter", next:"see_daughter"},
     {label:"see_daughter", m:"Attempt to heal the child.", item:ITEMS[1]},
-    {m:"Enter the western passage.",room: ROOMS[1]},
+
 ] 
 
 
@@ -73,9 +74,9 @@ const room3Options:Array<any> =[
         ]
     
     },
-    {label:"wyd", m:"What are you doing?"},
     {m:"Enter the eastern passage.",room: ROOMS[3]},
     {m:"Enter the northern passage.",room: ROOMS[4]},
+    {label:"wyd", m:"What are you doing?"},
 ] 
 
 const room4Options:Array<any> =[
@@ -84,8 +85,9 @@ const room4Options:Array<any> =[
             {requires:ITEMS[1], m:" Pour the alchemist's fire on the glacier.", next:"fire"}
         ]
     },
-    {label:"fire", m:"Are you ok?", item:ITEMS[3]},
     {m:"Enter the southern passage.",room: ROOMS[3]},
+    {label:"fire", m:"Are you ok?", item:ITEMS[3]},
+    
 ] 
 
 const room5Options:Array<any> =[
@@ -105,10 +107,9 @@ const room5Options:Array<any> =[
         {m:"The Unknown.", next:"right3"},
         {m:"Redemption.", next:"right3", item:ITEMS[5]},
     ]},
+    {m:"Enter the southern passage.", room:ROOMS[1]},
+    {label:"leave", m:"Enter the northern passage.", room:ROOMS[6]},
     {label:"right3", m:"Raise your hand to grasp the corporeal light.", item:ITEMS[4]},
     {requires:ITEMS[4], m:"Wave the staff to dispel the illusion.", next:"leave"},
-    {label:"leave", m:"Enter the northern passage.", room:ROOMS[6]},
     {label:"wrong", step:"RESET GAME"},
-    {m:"Enter the southern passage.", room:ROOMS[1]}
-
 ] 
