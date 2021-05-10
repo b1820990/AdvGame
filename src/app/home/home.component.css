@@ -262,7 +262,9 @@
     width: 1920px;
   }
 
-  ul {
+
+
+.options {
   list-style-type: none;
   margin: 0px;
   top: 0;
@@ -272,9 +274,11 @@
   background-color: #333;
 }
 
-li {
-  float: left;
+.crossout{
+  background-color: #333;
+  color: whitesmoke
 }
+
 
 li a {
   display: block;

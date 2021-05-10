@@ -17,55 +17,37 @@ export class HomeComponent implements OnInit {
   }
 
 
-options: any[] = [{"option": "Option1"}, {"option": "Option2"},
- {"option": "Option3"}, {"option": "Option4"}, {"option": "Back"}];
+options: any[] = [{"option": "Option1", "i": 0}, {"option": "Option2", "i": 1},
+ {"option": "Option3", "i": 2}, {"option": "Option4", "i": 3}, {"option": "Back", "i": 4}];
 
+styles: any[] = [{"toggle": " background-color: #333;color: whitesmoke"}, {"toggle": " background-color: #eeeeee"}]
   
   rooms = ROOMS;
 
   draw() {
 
   }
-  roomNum: number = 0;
-  next: boolean = false;
-  first: boolean = true;
+  index: number = 0;
+
   keyMap(e: any){
-    if(e.keyCode == '37'){
-      console.log("Left Key");
-      this.west();      
-    }
-    else if(e.keyCode == '38' ){
-      console.log("Up Key");
-      this.north();
-    }
-    else if(e.keyCode == '39'){
-      console.log("Right key");
-      this.east();
+   
+    if(e.keyCode == '38' ){
+      this.indexSub();
+      console.log(this.index);
     }
     else if(e.keyCode == '40'){
-      console.log("Down key");
-      this.south();
-    }
-    else{
-      console.log("Others");
+      this.indexAdd();
+      console.log(this.index);
     }
   }
 
-  north(){
-    this.roomNum = 0;
+  indexAdd(){
+    this.index++;
   }
-  south(){
-    this.roomNum = 1;
+  indexSub(){
+    this.index--;
   }
-  east(){
-    this.roomNum = 2;
-  }
-  west(){
-    this.roomNum = 3;
-  }
-  southNext(){
-    this.roomNum = 4;
-  }
+  
 
   imageName:String = "castle.gif";
  
