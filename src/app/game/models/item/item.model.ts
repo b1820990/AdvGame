@@ -1,9 +1,9 @@
 export class Item {
     private name!:String;
-    private description!:String;
+    private description?:String;
 
 
-    constructor(name:String, description: String){
+    constructor(name:String, description?: String){
         this.name = name;
         this.description = description;
     }
@@ -17,7 +17,7 @@ export class Item {
     }
 
     public getDescription(): String {
-        return this.description;
+        return this.description!;
     }
 
     public setDescription(description: String): void {
