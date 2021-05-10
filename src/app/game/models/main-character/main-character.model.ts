@@ -7,7 +7,7 @@ export class MainCharacter {
     private inventory!:Item[];
     private image?: File;
 
-    constructor(name:String, currentRoom:Room, inventory:Item[],image:File){
+    constructor(name:String, currentRoom:Room, inventory:Item[],image?:File){
         this.name = name;
         this.currentRoom = currentRoom;
         this.inventory = inventory;

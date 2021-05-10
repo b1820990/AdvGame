@@ -1,8 +1,13 @@
 export class Character {
     private name!: String;
-    
-    constructor(name:String){
+    private dialogue!:any;
+    constructor(name:String, dialogue?:any){
         this.name = name;
+        this.dialogue = dialogue;
+    }
+
+    public getDialog():any{
+        return this.dialogue;
     }
 
     public getName(): String {
