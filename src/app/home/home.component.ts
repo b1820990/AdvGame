@@ -46,9 +46,14 @@ export class HomeComponent implements OnInit {
 
   enterKey(index:number){
     if ('room' in this.currentRoom.getOptions()[index]){
-      console.log(this.currentRoom.getOptions()[index]['room'])
       const nextRoomIndex = this.currentRoom.getOptions()[index]['room'];
       this.resetRoomAndOptions(nextRoomIndex);
+    }
+    else if (('item' in this.currentRoom.getOptions()[index])){
+      this.description = "\nPicked up " + this.currentRoom.getOptions()[index]["item"].getName();
+      console.log(this.currentRoom.getOptions()[index]["item"])
+      delete this.currentRoom.getOptions()[index]["item"];
+      this.options= this.currentRoom.getOptions()
     }
   }
 

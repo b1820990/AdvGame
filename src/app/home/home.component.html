@@ -18,11 +18,11 @@
         <img src="/assets/images/1.gif">
       </div>
     </div> -->
-<div class = "boxed2">Dialogue:<br>
+<div class = "boxed2">{{this.currentRoom.getName()}}<br>
 {{description}}
 </div>
     <ng-container >
-      <img class="center" [src]="rooms[0].getImagePath()" style="height:500px; width:500px"/>
+      <img class="center" [src]="this.currentRoom.getImagePath()" style="height:500px; width:500px"/>
      </ng-container>
 
     <br>
