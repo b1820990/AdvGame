@@ -170,5 +170,6 @@ export const ROOMS: Room[] = [
     new Room("Room 6-6","/assets/rooms/6.png", room66Options),//13
     new Room("Room 6-7","/assets/rooms/6.png", room67Options),//14
     new Room("Room 6-8","/assets/rooms/6.png", room68Options),//15
+    
 ]
 
