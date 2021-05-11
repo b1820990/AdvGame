@@ -27,7 +27,6 @@ question:String = "";
   options: any[] = this.currentRoom.getOptions();
   
   index: number = 0;
-  depth: number = 0;
   description: String = this.currentRoom.description!;
 
 
@@ -87,7 +86,6 @@ question:String = "";
 
   resetRoomAndOptions(roomNum: number){
     this.index = 0;
-    this.depth = 0;
     this.currentRoom = this.rooms[roomNum];
     this.options = this.currentRoom.getOptions().filter(option => !option.hasOwnProperty("label") );
     this.reloadDescription(this.currentRoom.getDescription())
