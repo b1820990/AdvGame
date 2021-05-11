@@ -1,9 +1,9 @@
 <body style ="background-color: #474e5d;">
-    <ul>
-      <li><a class="active" routerLink = '/home'>Home</a></li>
-      <li><a routerLink = '/tutorial'>Tutorial</a></li>
-      <li><a routerLink = '/contact'>Contact</a></li>
-      <li><a routerLink = '/about'>About</a></li>
+    <ul class = "options">
+      <li style ="float: left"><a class="active" routerLink = '/home'>Home</a></li>
+      <li style ="float: left"><a routerLink = '/tutorial'>Tutorial</a></li>
+      <li style ="float: left"><a routerLink = '/contact'>Contact</a></li>
+      <li style ="float: left"><a routerLink = '/about'>About</a></li>
     </ul>
     <br>
     <!-- <div #canvasWrapper class="canvas-wrapper" (window:resize)="draw()">
@@ -26,16 +26,21 @@ he he they say that man dont be putting in no work
 shut the fuck up
 </div>
     <ng-container >
-      <img class="center" [src]="rooms[roomNum].getImagePath()" style="height:500px; width:500px"/>
+      <img class="center" [src]="rooms[0].getImagePath()" style="height:500px; width:500px"/>
      </ng-container>
 
     <br>
-    <div class = "boxed"><br> Press Up Key: To Move North <br>          
-      Press Down Key: To Move South <br>
-      Press Right Key: To Move East <br> 
-      Press Left key: To Move West <br> <br>
-      <input (keydown)="keyMap($event)" placeholder="Click then make selection">
-    </div>
+    <ul class = "boxed" style ="list-style-type: none" >
+    <li *ngFor = "let option of options; let i = index"> 
+        <br>  
+          <div *ngIf="i === index; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock> > {{option.option}}</ng-template>
+            <ng-template #elseBlock>{{option.option}}.</ng-template>
+
+        <br>
+    </li>
+    <input (keydown)="keyMap($event)" placeholder="Click then make selection">
+    </ul>
     <!-- <app-tests> </app-tests> -->
     <!--img src="/assets/images/castle.gif" height="100%" width="100%"/-->
 </body>

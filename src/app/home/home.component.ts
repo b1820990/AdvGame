@@ -16,51 +16,44 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+// options: any[] = [{"option": "Option1", "i": 0}, {"option": "Option2", "i": 1},
+//  {"option": "Option3", "i": 2}, {"option": "Option4", "i": 3}, {"option": "Back", "i": 4}];
+
   rooms = ROOMS;
+  options: any[] = this.rooms[0].getOptions();
 
   draw() {
 
   }
-  roomNum: number = 0;
-  next: boolean = false;
-  first: boolean = true;
+  index: number = 0;
+
   keyMap(e: any){
-    if(e.keyCode == '37'){
-      console.log("Left Key");
-      this.west();      
-    }
-    else if(e.keyCode == '38' ){
-      console.log("Up Key");
-      this.north();
-    }
-    else if(e.keyCode == '39'){
-      console.log("Right key");
-      this.east();
+    if(e.keyCode == '38' ){
+      this.indexSub();
+      console.log(this.index);
     }
     else if(e.keyCode == '40'){
-      console.log("Down key");
-      this.south();
+      this.indexAdd();
+      console.log(this.index);
     }
-    else{
-      console.log("Others");
+    else if(e.keyCode == '13'){ // enter key
+
     }
   }
 
-  north(){
-    this.roomNum = 0;
+  indexAdd(){
+    if(this.index < this.options.length){
+      this.index++;
+    }
   }
-  south(){
-    this.roomNum = 1;
+  indexSub(){
+    if(this.index < 0){
+      this.index--;
+    }
   }
-  east(){
-    this.roomNum = 2;
-  }
-  west(){
-    this.roomNum = 3;
-  }
-  southNext(){
-    this.roomNum = 4;
-  }
+  
+
 
   imageName:String = "castle.gif";
  

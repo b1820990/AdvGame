@@ -105,6 +105,7 @@ const room5Options:Array<any> =[
     {label:"wrong", step:"RESET GAME"},
 ] 
 
+
 export const ROOMS: Room[] = [
     new Room("Start","/assets/rooms/1or5orStart.png",roomStartOptions),
     new Room("Room 1","/assets/rooms/1or5orStart.png",room1Options),
@@ -123,3 +124,4 @@ export const ROOMS: Room[] = [
     new Room("Room 6-7","/assets/rooms/6.png"),
     new Room("Room 6-8","/assets/rooms/6.png"),
 ]
+
