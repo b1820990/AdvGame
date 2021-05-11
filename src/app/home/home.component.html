@@ -30,7 +30,7 @@ shut the fuck up
      </ng-container>
 
     <br>
-    <ul class = "boxed" style ="list-style-type: none" >
+    <ul (keydown)="keyMap($event)" class = "boxed" style ="list-style-type: none" >
     <li *ngFor = "let option of options; let i = index"> 
         <br>  
           <div *ngIf="i === index; then thenBlock else elseBlock"></div>
@@ -39,7 +39,7 @@ shut the fuck up
 
         <br>
     </li>
-    <input (keydown)="keyMap($event)" placeholder="Click then make selection">
+    <!-- <input  placeholder="Click then make selection"> -->
     </ul>
     <!-- <app-tests> </app-tests> -->
     <!--img src="/assets/images/castle.gif" height="100%" width="100%"/-->

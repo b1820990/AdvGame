@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { fromEventPattern } from 'rxjs';
 import { LocalStorageService } from 'src/services/local-storage/local-storage.service';
 import { ROOMS } from "src/app/game/GAME";
@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 options: any[] = [{"option": "Option1", "i": 0}, {"option": "Option2", "i": 1},
  {"option": "Option3", "i": 2}, {"option": "Option4", "i": 3}, {"option": "Back", "i": 4}];
 
-styles: any[] = [{"toggle": " background-color: #333;color: whitesmoke"}, {"toggle": " background-color: #eeeeee"}]
+
   
   rooms = ROOMS;
 
@@ -29,14 +29,16 @@ styles: any[] = [{"toggle": " background-color: #333;color: whitesmoke"}, {"togg
   }
   index: number = 0;
 
+  @HostListener('window: keydown', ['$event'])
   keyMap(e: any){
-   
+  
     if(e.keyCode == '38' ){
       this.indexSub();
-      console.log(this.index);
     }
     else if(e.keyCode == '40'){
       this.indexAdd();
+    }
+    else if(e.keyCode == '13'){
       console.log(this.index);
     }
   }
