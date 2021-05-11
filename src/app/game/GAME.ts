@@ -1,10 +1,6 @@
-
 import { Character } from "./models/character/character.model";
 import { Item } from "./models/item/item.model";
 import { Room } from "./models/room/room.model";
-
-
-
 
 
 const CHARACTERS: Array<Character> = [

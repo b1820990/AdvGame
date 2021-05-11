@@ -33,6 +33,7 @@ question:String = "";
 
   @HostListener('window: keydown', ['$event'])
   keyMap(e: any){
+
     if(e.keyCode == '38' ){ // up arror key
       this.indexSub();
     }
@@ -47,6 +48,7 @@ question:String = "";
 
 
   enterKey(index:number){
+    console.log(this.inventory);
     if ('room' in this.options[index]){
       const nextRoomIndex = this.options[index]['room'];
       this.resetRoomAndOptions(nextRoomIndex);
