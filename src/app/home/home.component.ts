@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { fromEventPattern } from 'rxjs';
 import { LocalStorageService } from 'src/services/local-storage/local-storage.service';
 import { ROOMS} from "src/app/game/GAME";
@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 
 // options: any[] = [{"option": "Option1", "i": 0}, {"option": "Option2", "i": 1},
 //  {"option": "Option3", "i": 2}, {"option": "Option4", "i": 3}, {"option": "Back", "i": 4}];
-
+question:String = "";
   rooms = ROOMS;
   inventory:Item[] = [];
   currentRoom = this.rooms[0];
@@ -28,8 +28,10 @@ export class HomeComponent implements OnInit {
   
   index: number = 0;
   depth: number = 0;
-  description: String = "Fuckers in school telling me always in the barber shop \"Chief keef aint bout this chief keef aint bout that\" My boy a BD on fucking lamron and them he he they say that man dont be putting in no work shut the fuck up";
-  question:String = "";
+  description: String = this.currentRoom.description!;
+
+
+  @HostListener('window: keydown', ['$event'])
   keyMap(e: any){
 
     if(e.keyCode == '38' ){ // up arror key
@@ -50,6 +52,7 @@ export class HomeComponent implements OnInit {
     if ('room' in this.options[index]){
       const nextRoomIndex = this.options[index]['room'];
       this.resetRoomAndOptions(nextRoomIndex);
+      this.reloadDescription(this.currentRoom.description!);
     }
     else if (('item' in this.options[index])){
       this.description = "\nPicked up " + this.options[index]["item"].getName();

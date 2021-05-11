@@ -154,12 +154,12 @@ const room7Options:Array<any> =[
 ]
 
 export const ROOMS: Room[] = [
-    new Room("Start","/assets/rooms/1or5orStart.png",roomStartOptions),
-    new Room("Room 1","/assets/rooms/1or5orStart.png",room1Options),
-    new Room("Room 2","/assets/rooms/2.png",room2Options),
-    new Room("Room 3","/assets/rooms/3.png", room3Options),
-    new Room("Room 4","/assets/rooms/4.png",room4Options),
-    new Room("Room 5","/assets/rooms/1or5orStart.png",room5Options),
+    new Room("Start","/assets/rooms/1or5orStart.png",roomStartOptions , "You awaken on hard packed ice. Grasping your head to shield yourself from a splitting headache, you do your best to recall your situation. You are Elisande, the warrior princess of the North. The last thing you remember is the harsh freezing winds rush through your kingdom, freezing all in its path under a thick layer of crystalline ice.You have heard tales of the dreaded Ice Lich Ancine and his rise to power and it seems his next conquest was your kingdom. You look at your old, rusted broadsword on the ground and begin your quest."),
+    new Room("Room 1","/assets/rooms/1or5orStart.png",room1Options ,"This room is split into passages to the east, west, and south with a stone door blocking entrance to the north. On the door itself there lies an inscription."),
+    new Room("Room 2","/assets/rooms/2.png",room2Options  "An old man, slightly balding stands in the center of the room and looking at a young girl, occasionally brushing her hair and sniffling. He wears the clothes of a farmer."),
+    new Room("Room 3","/assets/rooms/3.png", room3Options ,"A man with red eyes sits on a chair in the center of the room, lounging." ),
+    new Room("Room 4","/assets/rooms/4.png",room4Options  "Inside the room, a huge pillar of ice spirals upward. Its crystalline edifice glimmers softly as a woman with long, pointed ears looks in abject horror."),
+    new Room("Room 5","/assets/rooms/1or5orStart.png",room5Options , "The room contains a small dais in the center with runes etched along its surface. Similar runes are inscribed on the door to the north, magically sealed."),
     new Room("Room 6","/assets/rooms/6.png",room6Options ),
     new Room("Room 7","/assets/rooms/7.png", room7Options),
     new Room("Room 6-1","/assets/rooms/6.png", room61Options),//8 +
@@ -171,5 +171,6 @@ export const ROOMS: Room[] = [
     new Room("Room 6-7","/assets/rooms/6.png", room67Options),//14
     new Room("Room 6-8","/assets/rooms/6.png", room68Options),//15
     
+
 ]
 

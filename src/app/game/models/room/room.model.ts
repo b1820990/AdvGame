@@ -5,13 +5,13 @@ export class Room {
     private name!: String;
     private imagePath!:any;
     private item?: Item;
-    private description?: String; 
+    public description?: String; 
     private options?: any[];
     private character?:Character;
     private isVisited?:boolean;
 
 
-    constructor(name: String, imagePath:String,options?:any[],  item?: Item, description?:String, character?:Character, isVisited?: boolean){
+    constructor(name: String, imagePath:String,options?:any[], description?:String, item?: Item, character?:Character, isVisited?: boolean){
 
         this.name = name;
         this.imagePath = imagePath;
