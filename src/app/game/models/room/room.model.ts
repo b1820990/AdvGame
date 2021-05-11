@@ -10,7 +10,9 @@ export class Room {
     private character?:Character;
     private isVisited?:boolean;
 
+
     constructor(name: String, imagePath:String,  item?: Item, description?:String, options?:any[], character?:Character, isVisited?: boolean){
+
         this.name = name;
         this.imagePath = imagePath;
         this.item = item;

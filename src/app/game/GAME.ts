@@ -7,22 +7,13 @@ import { Room } from "./models/room/room.model";
 
 
 
-export const CHARACTERS: Array<Character> = [
+const CHARACTERS: Array<Character> = [
     new Character("Ebed"),
     new Character("Saturos"),
     new Character("Shenarah"),
 ]
 
-export const ROOMS: Room[] = [
-    new Room("Start","/assets/rooms/1or5orStart.png"),
-    new Room("Room 1","/assets/rooms/1or5orStart.png"),
-    new Room("Room 2","/assets/rooms/2.png"),
-    new Room("Room 3","/assets/rooms/3.png"),
-    new Room("Room 4","/assets/rooms/4.png"),
-    new Room("Room 5","/assets/rooms/1or5orStart.png"),
-    new Room("Room 6","/assets/rooms/6.png"),
-    new Room("Room 7","/assets/rooms/7.png"),
-]
+
 
 export const ITEMS: Item[] = [
     new Item("Broadsword"),
@@ -37,16 +28,16 @@ export const ITEMS: Item[] = [
 
 
 const roomStartOptions:Array<any> =[
-    {m:"Enter the northern passage."}
+    {m:"Enter the northern passage.", room: 1}
 ] 
 
 
 const room1Options:Array<any> =[
     {m:"Pick up the rusted broadsword.", item: ITEMS[0]},
     {m:"Inspect inscription on door.", String: ""},
-    {m:"Enter the eastern passage.", room: ROOMS[2]},
-    {m:"Enter the western passage.",room: ROOMS[3] },
-    {m:"Enter the southern passage.", room: ROOMS[0]},
+    {m:"Enter the eastern passage.", room: 2},
+    {m:"Enter the western passage.",room: 3},
+    {m:"Enter the southern passage.", room: 0},
 ] 
 
 const room2Options:Array<any> =[
@@ -57,9 +48,10 @@ const room2Options:Array<any> =[
         ]
     
     },
+    {m:"Enter the western passage.",room: 1},
     {label:"ok", m:"I will see to your daughter", next:"see_daughter"},
     {label:"see_daughter", m:"Attempt to heal the child.", item:ITEMS[1]},
-    {m:"Enter the western passage.",room: ROOMS[1]},
+
 ] 
 
 
@@ -73,9 +65,9 @@ const room3Options:Array<any> =[
         ]
     
     },
+    {m:"Enter the eastern passage.",room: 3},
+    {m:"Enter the northern passage.",room: 4},
     {label:"wyd", m:"What are you doing?"},
-    {m:"Enter the eastern passage.",room: ROOMS[3]},
-    {m:"Enter the northern passage.",room: ROOMS[4]},
 ] 
 
 const room4Options:Array<any> =[
@@ -84,8 +76,9 @@ const room4Options:Array<any> =[
             {requires:ITEMS[1], m:" Pour the alchemist's fire on the glacier.", next:"fire"}
         ]
     },
+    {m:"Enter the southern passage.",room: 3},
     {label:"fire", m:"Are you ok?", item:ITEMS[3]},
-    {m:"Enter the southern passage.",room: ROOMS[3]},
+    
 ] 
 
 const room5Options:Array<any> =[
@@ -105,13 +98,30 @@ const room5Options:Array<any> =[
         {m:"The Unknown.", next:"right3"},
         {m:"Redemption.", next:"right3", item:ITEMS[5]},
     ]},
+    {m:"Enter the southern passage.", room:1},
+    {label:"leave", m:"Enter the northern passage.", room:6},
     {label:"right3", m:"Raise your hand to grasp the corporeal light.", item:ITEMS[4]},
     {requires:ITEMS[4], m:"Wave the staff to dispel the illusion.", next:"leave"},
-    {label:"leave", m:"Enter the northern passage.", room:ROOMS[6]},
     {label:"wrong", step:"RESET GAME"},
-    {m:"Enter the southern passage.", room:ROOMS[1]}
-
 ] 
 
-export const dialogue: Array<any> = [roomStartOptions, room1Options,
-     room2Options, room3Options, room4Options, room5Options]
+
+export const ROOMS: Room[] = [
+    new Room("Start","/assets/rooms/1or5orStart.png",roomStartOptions),
+    new Room("Room 1","/assets/rooms/1or5orStart.png",room1Options),
+    new Room("Room 2","/assets/rooms/2.png",room2Options),
+    new Room("Room 3","/assets/rooms/3.png", room3Options),
+    new Room("Room 4","/assets/rooms/4.png",room4Options),
+    new Room("Room 5","/assets/rooms/1or5orStart.png",room5Options),
+    new Room("Room 6","/assets/rooms/6.png"),
+    new Room("Room 7","/assets/rooms/7.png"),
+    new Room("Room 6-1","/assets/rooms/6.png"),
+    new Room("Room 6-2","/assets/rooms/6.png"),
+    new Room("Room 6-3","/assets/rooms/6.png"),
+    new Room("Room 6-4","/assets/rooms/6.png"),
+    new Room("Room 6-5","/assets/rooms/6.png"),
+    new Room("Room 6-6","/assets/rooms/6.png"),
+    new Room("Room 6-7","/assets/rooms/6.png"),
+    new Room("Room 6-8","/assets/rooms/6.png"),
+]
+
