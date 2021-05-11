@@ -38,9 +38,6 @@ export class HomeComponent implements OnInit {
     else if(e.keyCode == '40'){
       this.indexAdd();
     }
-    else if(e.keyCode == '13'){
-      
-    }
     else if(e.keyCode == '13'){ // enter key  
 
       this.enterKey(this.index);
