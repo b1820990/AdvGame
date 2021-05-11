@@ -38,19 +38,20 @@ const room1Options:Array<any> =[
     {m:"Enter the eastern passage.", room: 2},
     {m:"Enter the western passage.",room: 3},
     {m:"Enter the southern passage.", room: 0},
-    {m:"Enter the nothern passage.", room: 4},
+    {m:"Enter the nothern passage.", room: 5},
 ] 
 
 const room2Options:Array<any> =[
     {
         m:"Speak to the farmer.", options:[
-            {m:"Where is this place?"},
+            {m:"Where is this place?", next:"wya"},
             {m:"Are you okay?", next:"ok"},
         ]
     
     },
     {m:"Enter the western passage.",room: 1},
     {label:"ok", m:"I will see to your daughter", next:"see_daughter"},
+    {label:"wya", m:"T-this is a cavern created by that dreaded Lich Ancine. We'll meet our end here, just like my poor girl Grace might"},
     {label:"see_daughter", m:"Attempt to heal the child.", item:ITEMS[1]},
 
 ] 
@@ -94,7 +95,7 @@ const room5Options:Array<any> =[
         {m:"Silence.", next:"right2"},
         {m:"Death.", next:"wrong"},
     ]},
-    {label:"right2", m:"What goes away as soon as you talk about it?", options:[
+    {label:"right2", m:"What is man's greatest fear?", options:[
         {m:"Death.", next:"right3"},
         {m:"The Unknown.", next:"right3"},
         {m:"Redemption.", next:"right3", item:ITEMS[5]},
@@ -106,7 +107,12 @@ const room5Options:Array<any> =[
     {label:"wrong", step:"RESET GAME"},
 ] 
 
-
+const room6Options:Array<any> =[
+    {m:"Inspect Mural"},
+    {m:"Enter the eastern passage.", room:12},
+    {m:"Enter the northern passage.", room:8},
+    {m:"Enter the southern passage.", room:5},
+]
 export const ROOMS: Room[] = [
     new Room("Start","/assets/rooms/1or5orStart.png",roomStartOptions),
     new Room("Room 1","/assets/rooms/1or5orStart.png",room1Options),
@@ -116,7 +122,7 @@ export const ROOMS: Room[] = [
     new Room("Room 5","/assets/rooms/1or5orStart.png",room5Options),
     new Room("Room 6","/assets/rooms/6.png"),
     new Room("Room 7","/assets/rooms/7.png"),
-    new Room("Room 6-1","/assets/rooms/6.png"),
+    new Room("Room 6-1","/assets/rooms/6.png"),//8 +
     new Room("Room 6-2","/assets/rooms/6.png"),
     new Room("Room 6-3","/assets/rooms/6.png"),
     new Room("Room 6-4","/assets/rooms/6.png"),
