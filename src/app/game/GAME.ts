@@ -34,7 +34,7 @@ const room1Options:Array<any> =[
     {m:"Enter the eastern passage.", room: 2},
     {m:"Enter the western passage.",room: 3},
     {m:"Enter the southern passage.", room: 0},
-    {m:"Enter the nothern passage.", room: 5},
+    {m:"Enter the northern passage.", room: 5},
 ] 
 
 const room2Options:Array<any> =[
