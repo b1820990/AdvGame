@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   
   index: number = 0;
   depth: number = 0;
-  description: String = "Fuckers in school telling me always in the barber shop \"Chief keef aint bout this chief keef aint bout that\" My boy a BD on fucking lamron and them he he they say that man dont be putting in no work shut the fuck up";
+  description: String = this.currentRoom.description!;
 
 
   @HostListener('window: keydown', ['$event'])
@@ -50,6 +50,7 @@ export class HomeComponent implements OnInit {
       console.log(this.currentRoom.getOptions()[index]['room'])
       const nextRoomIndex = this.currentRoom.getOptions()[index]['room'];
       this.resetRoomAndOptions(nextRoomIndex);
+      this.reloadDescription(this.currentRoom.description!);
     }
   }
 
