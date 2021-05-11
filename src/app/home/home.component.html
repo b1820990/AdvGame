@@ -19,11 +19,7 @@
       </div>
     </div> -->
 <div class = "boxed2">Dialogue:<br>
-Fuckers in school telling me always in the barber shop
-"Chief keef aint bout this chief keef aint bout that"
-My boy a BD on fucking lamron and them 
-he he they say that man dont be putting in no work
-shut the fuck up
+{{description}}
 </div>
     <ng-container >
       <img class="center" [src]="rooms[0].getImagePath()" style="height:500px; width:500px"/>
@@ -34,8 +30,8 @@ shut the fuck up
     <li *ngFor = "let option of options; let i = index"> 
         <br>  
           <div *ngIf="i === index; then thenBlock else elseBlock"></div>
-            <ng-template #thenBlock> > {{option.option}}</ng-template>
-            <ng-template #elseBlock>{{option.option}}.</ng-template>
+            <ng-template #thenBlock> > {{option.m}}</ng-template>
+            <ng-template #elseBlock>{{option.m}}.</ng-template>
 
         <br>
     </li>

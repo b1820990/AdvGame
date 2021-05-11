@@ -82,7 +82,7 @@ const room4Options:Array<any> =[
 ] 
 
 const room5Options:Array<any> =[
-    {m:"Step onto the dais and kneel.", next:"riddle"},
+    {m:"Step onto the dais and kneel.", next:"riddle1"},
     {label:"riddle1", m:"If I have it, I don’t share it. If I share it, I don’t have it. What is it?", options:[
         {m:"Solitude.", next:"wrong"},
         {m:"An invisible hamster.", next:"wrong"},
