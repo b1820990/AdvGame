@@ -84,6 +84,12 @@ question:String = "";
   }
 
   resetRoomAndOptions(roomNum: number){
+    if(roomNum === 7){
+      let audio = new Audio();
+      audio.src = "../../../assets/audio/win.mp3";
+      audio.load();
+      audio.play();
+    }
     this.index = 0;
     this.currentRoom = this.rooms[roomNum];
     this.options = this.currentRoom.getOptions().filter(option => !option.hasOwnProperty("label") );

@@ -151,7 +151,7 @@ const room68Options:Array<any> =[
 ]
 
 const room7Options:Array<any> =[
-    {m:"Enter the southern passage.", room:10},
+    {next:"win"},
 ]
 
 export const ROOMS: Room[] = [
@@ -162,7 +162,7 @@ export const ROOMS: Room[] = [
     new Room("Room 4","/assets/rooms/4.png",room4Options, "Inside the room, a huge pillar of ice spirals upward. Its crystalline edifice glimmers softly as a woman with long, pointed ears looks in abject horror."),
     new Room("Room 5","/assets/rooms/1or5orStart.png",room5Options , "The room contains a small dais in the center with runes etched along its surface. Similar runes are inscribed on the door to the north, magically sealed."),
     new Room("Room 6","/assets/rooms/6.png",room6Options, "The room you stand in bears a long mural with a door that leads north."),
-    new Room("Room 7","/assets/rooms/7.png", room7Options),
+    new Room("Room 7","/assets/rooms/7.png", room7Options, "You win!"),
     new Room("Room 6-1","/assets/rooms/6.png", room61Options, "This room has an entrance to the north and south."),//8 +
     new Room("Room 6-2","/assets/rooms/6.png", room62Options, "This room has entrances to the south, east, and west."),//9 ,""
     new Room("Room 6-3","/assets/rooms/6.png", room63Options, "This room has entrances to the east, north, and west."),//10
