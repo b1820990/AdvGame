@@ -32,7 +32,12 @@ shut the fuck up
     <br>
     <ul class = "boxed" style ="list-style-type: none" >
     <li *ngFor = "let option of options; let i = index"> 
-     <br><span  class = "crossout"> {{option.i}} {{option.option}}</span><br>
+        <br>  
+          <div *ngIf="i === index; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock> > {{option.option}}</ng-template>
+            <ng-template #elseBlock>{{option.option}}.</ng-template>
+
+        <br>
     </li>
     <input (keydown)="keyMap($event)" placeholder="Click then make selection">
     </ul>
