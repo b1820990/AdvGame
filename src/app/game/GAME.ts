@@ -113,6 +113,50 @@ const room6Options:Array<any> =[
     {m:"Enter the northern passage.", room:8},
     {m:"Enter the southern passage.", room:5},
 ]
+
+const room61Options:Array<any> =[
+    {m:"Enter the northern passage.", room:9},
+    {m:"Enter the southern passage.", room:6},
+]
+
+const room62Options:Array<any> =[
+    {m:"Enter the eastern passage.", room:10},
+    {m:"Enter the western passage.", room:14},
+    {m:"Enter the southern passage.", room:6},
+]
+
+const room63Options:Array<any> =[
+    {m:"Enter the northern passage.", room:15},
+    {m:"Enter the eastern passage.", room:11},
+    {m:"Enter the western passage.", room:14},
+]
+
+const room64Options:Array<any> =[
+    {m:"Enter the northern passage.", room:7},
+    {m:"Enter the western passage.", room:10},
+]
+
+const room65Options:Array<any> =[
+    {m:"Enter the northern passage.", room:33},
+    {m:"Enter the western passage.", room:6},
+]
+
+const room66Options:Array<any> =[
+    {m:"Enter the southern passage.", room:12},
+]
+
+const room67Options:Array<any> =[
+    {m:"Enter the eastern passage.", room:9},
+]
+
+const room68Options:Array<any> =[
+    {m:"Enter the southern passage.", room:10},
+]
+
+const room7Options:Array<any> =[
+    {m:"Enter the southern passage.", room:10},
+]
+
 export const ROOMS: Room[] = [
     new Room("Start","/assets/rooms/1or5orStart.png",roomStartOptions),
     new Room("Room 1","/assets/rooms/1or5orStart.png",room1Options),
@@ -123,12 +167,12 @@ export const ROOMS: Room[] = [
     new Room("Room 6","/assets/rooms/6.png"),
     new Room("Room 7","/assets/rooms/7.png"),
     new Room("Room 6-1","/assets/rooms/6.png"),//8 +
-    new Room("Room 6-2","/assets/rooms/6.png"),
-    new Room("Room 6-3","/assets/rooms/6.png"),
-    new Room("Room 6-4","/assets/rooms/6.png"),
-    new Room("Room 6-5","/assets/rooms/6.png"),
-    new Room("Room 6-6","/assets/rooms/6.png"),
-    new Room("Room 6-7","/assets/rooms/6.png"),
-    new Room("Room 6-8","/assets/rooms/6.png"),
+    new Room("Room 6-2","/assets/rooms/6.png"),//9
+    new Room("Room 6-3","/assets/rooms/6.png"),//10
+    new Room("Room 6-4","/assets/rooms/6.png"),//11
+    new Room("Room 6-5","/assets/rooms/6.png"),//12
+    new Room("Room 6-6","/assets/rooms/6.png"),//13
+    new Room("Room 6-7","/assets/rooms/6.png"),//14
+    new Room("Room 6-8","/assets/rooms/6.png"),//15
 ]
 
