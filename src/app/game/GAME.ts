@@ -38,18 +38,20 @@ const room1Options:Array<any> =[
     {m:"Enter the eastern passage.", room: 2},
     {m:"Enter the western passage.",room: 3},
     {m:"Enter the southern passage.", room: 0},
+    {m:"Enter the nothern passage.", room: 5},
 ] 
 
 const room2Options:Array<any> =[
     {
         m:"Speak to the farmer.", options:[
-            {m:"Where is this place?"},
+            {m:"Where is this place?", next:"wya"},
             {m:"Are you okay?", next:"ok"},
         ]
     
     },
     {m:"Enter the western passage.",room: 1},
     {label:"ok", m:"I will see to your daughter", next:"see_daughter"},
+    {label:"wya", m:"T-this is a cavern created by that dreaded Lich Ancine. We'll meet our end here, just like my poor girl Grace might"},
     {label:"see_daughter", m:"Attempt to heal the child.", item:ITEMS[1]},
 
 ] 
@@ -65,7 +67,7 @@ const room3Options:Array<any> =[
         ]
     
     },
-    {m:"Enter the eastern passage.",room: 3},
+    {m:"Enter the eastern passage.",room: 1},
     {m:"Enter the northern passage.",room: 4},
     {label:"wyd", m:"What are you doing?"},
 ] 
@@ -93,7 +95,7 @@ const room5Options:Array<any> =[
         {m:"Silence.", next:"right2"},
         {m:"Death.", next:"wrong"},
     ]},
-    {label:"right2", m:"What goes away as soon as you talk about it?", options:[
+    {label:"right2", m:"What is man's greatest fear?", options:[
         {m:"Death.", next:"right3"},
         {m:"The Unknown.", next:"right3"},
         {m:"Redemption.", next:"right3", item:ITEMS[5]},
@@ -105,6 +107,55 @@ const room5Options:Array<any> =[
     {label:"wrong", step:"RESET GAME"},
 ] 
 
+const room6Options:Array<any> =[
+    {m:"Inspect Mural"},
+    {m:"Enter the eastern passage.", room:12},
+    {m:"Enter the northern passage.", room:8},
+    {m:"Enter the southern passage.", room:5},
+]
+
+const room61Options:Array<any> =[
+    {m:"Enter the northern passage.", room:9},
+    {m:"Enter the southern passage.", room:6},
+]
+
+const room62Options:Array<any> =[
+    {m:"Enter the eastern passage.", room:10},
+    {m:"Enter the western passage.", room:14},
+    {m:"Enter the southern passage.", room:6},
+]
+
+const room63Options:Array<any> =[
+    {m:"Enter the northern passage.", room:15},
+    {m:"Enter the eastern passage.", room:11},
+    {m:"Enter the western passage.", room:14},
+]
+
+const room64Options:Array<any> =[
+    {m:"Enter the northern passage.", room:7},
+    {m:"Enter the western passage.", room:10},
+]
+
+const room65Options:Array<any> =[
+    {m:"Enter the northern passage.", room:33},
+    {m:"Enter the western passage.", room:6},
+]
+
+const room66Options:Array<any> =[
+    {m:"Enter the southern passage.", room:12},
+]
+
+const room67Options:Array<any> =[
+    {m:"Enter the eastern passage.", room:9},
+]
+
+const room68Options:Array<any> =[
+    {m:"Enter the southern passage.", room:10},
+]
+
+const room7Options:Array<any> =[
+    {m:"Enter the southern passage.", room:10},
+]
 
 export const ROOMS: Room[] = [
     new Room("Start","/assets/rooms/1or5orStart.png",roomStartOptions, "You awaken on hard packed ice. Grasping your head to shield yourself from a splitting headache, you do your best to recall your situation. You are Elisande, the warrior princess of the North. The last thing you remember is the harsh freezing winds rush through your kingdom, freezing all in its path under a thick layer of crystalline ice.You have heard tales of the dreaded Ice Lich Ancine and his rise to power and it seems his next conquest was your kingdom. You look at your old, rusted broadsword on the ground and begin your quest."),
@@ -115,13 +166,13 @@ export const ROOMS: Room[] = [
     new Room("Room 5","/assets/rooms/1or5orStart.png",room5Options, ""),
     new Room("Room 6","/assets/rooms/6.png"),
     new Room("Room 7","/assets/rooms/7.png"),
-    new Room("Room 6-1","/assets/rooms/6.png"),
-    new Room("Room 6-2","/assets/rooms/6.png"),
-    new Room("Room 6-3","/assets/rooms/6.png"),
-    new Room("Room 6-4","/assets/rooms/6.png"),
-    new Room("Room 6-5","/assets/rooms/6.png"),
-    new Room("Room 6-6","/assets/rooms/6.png"),
-    new Room("Room 6-7","/assets/rooms/6.png"),
-    new Room("Room 6-8","/assets/rooms/6.png"),
+    new Room("Room 6-1","/assets/rooms/6.png"),//8 +
+    new Room("Room 6-2","/assets/rooms/6.png"),//9
+    new Room("Room 6-3","/assets/rooms/6.png"),//10
+    new Room("Room 6-4","/assets/rooms/6.png"),//11
+    new Room("Room 6-5","/assets/rooms/6.png"),//12
+    new Room("Room 6-6","/assets/rooms/6.png"),//13
+    new Room("Room 6-7","/assets/rooms/6.png"),//14
+    new Room("Room 6-8","/assets/rooms/6.png"),//15
 ]
 
