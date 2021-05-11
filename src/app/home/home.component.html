@@ -26,16 +26,16 @@ he he they say that man dont be putting in no work
 shut the fuck up
 </div>
     <ng-container >
-      <img class="center" [src]="rooms[0].getImagePath()" style="height:500px; width:500px"/>
+      <img class="center" [src]="rooms[roomIndex].getImagePath()" style="height:500px; width:500px"/>
      </ng-container>
 
     <br>
     <ul (keydown)="keyMap($event)" class = "boxed" style ="list-style-type: none" >
-    <li *ngFor = "let option of options; let i = index"> 
+    <li *ngFor = "let option of room1Options; let i = index"> 
         <br>  
           <div *ngIf="i === index; then thenBlock else elseBlock"></div>
-            <ng-template #thenBlock> > {{option.option}}</ng-template>
-            <ng-template #elseBlock>{{option.option}}.</ng-template>
+            <ng-template #thenBlock> > {{option.m}}</ng-template>
+            <ng-template #elseBlock>{{option.m}}.</ng-template>
 
         <br>
     </li>
