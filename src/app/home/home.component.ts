@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   index: number = 0;
   depth: number = 0;
   description: String = "Fuckers in school telling me always in the barber shop \"Chief keef aint bout this chief keef aint bout that\" My boy a BD on fucking lamron and them he he they say that man dont be putting in no work shut the fuck up";
-
+  question:String = "";
   keyMap(e: any){
     if(e.keyCode == '38' ){ // up arror key
       this.indexSub();
@@ -51,9 +51,14 @@ export class HomeComponent implements OnInit {
     }
     else if (('item' in this.currentRoom.getOptions()[index])){
       this.description = "\nPicked up " + this.currentRoom.getOptions()[index]["item"].getName();
-      console.log(this.currentRoom.getOptions()[index]["item"])
-      delete this.currentRoom.getOptions()[index]["item"];
-      this.options= this.currentRoom.getOptions()
+      this.currentRoom.getOptions().splice(index,1);
+      this.options = this.currentRoom.getOptions();
+    }
+    else{
+      if ('options' in this.currentRoom.getOptions()[index]){
+        this.question = this.currentRoom.getOptions()[index]["m"];
+        this.options = this.currentRoom.getOptions()[index]["options"];
+      }
     }
   }
 
@@ -66,6 +71,7 @@ export class HomeComponent implements OnInit {
     this.depth = 0;
     this.currentRoom = this.rooms[roomNum];
     this.options = this.currentRoom.getOptions();
+    this.reloadDescription(this.currentRoom.getDescription())
   }
   indexAdd(){
     if(this.index < this.options.length - 1){
