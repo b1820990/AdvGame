@@ -1,10 +1,6 @@
-
 import { Character } from "./models/character/character.model";
 import { Item } from "./models/item/item.model";
 import { Room } from "./models/room/room.model";
-
-
-
 
 
 const CHARACTERS: Array<Character> = [
@@ -164,15 +160,15 @@ export const ROOMS: Room[] = [
     new Room("Room 3","/assets/rooms/3.png", room3Options),
     new Room("Room 4","/assets/rooms/4.png",room4Options),
     new Room("Room 5","/assets/rooms/1or5orStart.png",room5Options),
-    new Room("Room 6","/assets/rooms/6.png"),
-    new Room("Room 7","/assets/rooms/7.png"),
-    new Room("Room 6-1","/assets/rooms/6.png"),//8 +
-    new Room("Room 6-2","/assets/rooms/6.png"),//9
-    new Room("Room 6-3","/assets/rooms/6.png"),//10
-    new Room("Room 6-4","/assets/rooms/6.png"),//11
-    new Room("Room 6-5","/assets/rooms/6.png"),//12
-    new Room("Room 6-6","/assets/rooms/6.png"),//13
-    new Room("Room 6-7","/assets/rooms/6.png"),//14
-    new Room("Room 6-8","/assets/rooms/6.png"),//15
+    new Room("Room 6","/assets/rooms/6.png",room6Options ),
+    new Room("Room 7","/assets/rooms/7.png", room7Options),
+    new Room("Room 6-1","/assets/rooms/6.png", room61Options),//8 +
+    new Room("Room 6-2","/assets/rooms/6.png", room62Options),//9
+    new Room("Room 6-3","/assets/rooms/6.png", room63Options),//10
+    new Room("Room 6-4","/assets/rooms/6.png", room64Options),//11
+    new Room("Room 6-5","/assets/rooms/6.png", room65Options),//12
+    new Room("Room 6-6","/assets/rooms/6.png", room66Options),//13
+    new Room("Room 6-7","/assets/rooms/6.png", room67Options),//14
+    new Room("Room 6-8","/assets/rooms/6.png", room68Options),//15
 ]
 

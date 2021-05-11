@@ -31,12 +31,12 @@ export class HomeComponent implements OnInit {
   description: String = "Fuckers in school telling me always in the barber shop \"Chief keef aint bout this chief keef aint bout that\" My boy a BD on fucking lamron and them he he they say that man dont be putting in no work shut the fuck up";
   question:String = "";
   keyMap(e: any){
+
     if(e.keyCode == '38' ){ // up arror key
       this.indexSub();
     }
     else if(e.keyCode == '40'){
       this.indexAdd();
-      console.log(this.index);
     }
     else if(e.keyCode == '13'){ // enter key  
 
@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
 
 
   enterKey(index:number){
+    console.log(this.inventory);
     if ('room' in this.options[index]){
       const nextRoomIndex = this.options[index]['room'];
       this.resetRoomAndOptions(nextRoomIndex);
