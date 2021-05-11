@@ -160,8 +160,8 @@ export const ROOMS: Room[] = [
     new Room("Room 3","/assets/rooms/3.png", room3Options ,"A man with red eyes sits on a chair in the center of the room, lounging." ),
     new Room("Room 4","/assets/rooms/4.png",room4Options, "Inside the room, a huge pillar of ice spirals upward. Its crystalline edifice glimmers softly as a woman with long, pointed ears looks in abject horror."),
     new Room("Room 5","/assets/rooms/1or5orStart.png",room5Options , "The room contains a small dais in the center with runes etched along its surface. Similar runes are inscribed on the door to the north, magically sealed."),
-    new Room("Room 6","/assets/rooms/6.png",room6Options ),
-    new Room("Room 7","/assets/rooms/7.png", room7Options),
+    new Room("Room 6","/assets/rooms/6.png",room6Options),
+    new Room("Room 7","/assets/rooms/7.png", room7Options, "As you cross the gorge, you find the Ice King sitting on his throne. Elisande, he spits with venom. To think you of all people would have survived. After you destroyed my home, destroyed my family with your ever-expanding desire for conquest. Now you've come to finish the job? My pact has granted me power enough to raze entire kingdoms and now you shall meet your end as well. Time to die. The skeletal mage flies into the air, uttering strange incantations. Around him, a bubble of protective energy envelops him and sends chunks of hail and ice towards you."),
     new Room("Room 6-1","/assets/rooms/6.png", room61Options),//8 +
     new Room("Room 6-2","/assets/rooms/6.png", room62Options),//9
     new Room("Room 6-3","/assets/rooms/6.png", room63Options),//10
