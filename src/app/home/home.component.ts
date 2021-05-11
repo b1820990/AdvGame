@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { fromEventPattern } from 'rxjs';
 import { LocalStorageService } from 'src/services/local-storage/local-storage.service';
-import { ROOMS, ITEMS } from "src/app/game/GAME";
-
+import { ROOMS} from "src/app/game/GAME";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,36 +17,22 @@ export class HomeComponent implements OnInit {
   }
 
 
-options: any[] = [{"option": "Option1", "i": 0}, {"option": "Option2", "i": 1},
- {"option": "Option3", "i": 2}, {"option": "Option4", "i": 3}, {"option": "Back", "i": 4}];
+// options: any[] = [{"option": "Option1", "i": 0}, {"option": "Option2", "i": 1},
+//  {"option": "Option3", "i": 2}, {"option": "Option4", "i": 3}, {"option": "Back", "i": 4}];
 
-  room1Options:Array<any> =[
-  {m:"Pick up the rusted broadsword.", item: ITEMS[0], "i": 0},
-  {m:"Inspect inscription on door.", String: "",  "i": 1},
-  {m:"Enter the eastern passage.", room: ROOMS[2], "i": 2},
-  {m:"Enter the western passage.",room: ROOMS[3],  "i": 3 },
-  {m:"Enter the southern passage.", room: ROOMS[0], "i": 4},
-] 
-
-roomStartOptions:Array<any> =[
-  {m:"Enter the northern passage."}
-] 
-
-
-  
   rooms = ROOMS;
-
-  draw() {
-
-  }
+  
+  currentRoom = this.rooms[0];
+  options: any[] = this.currentRoom.getOptions();
+  
   index: number = 0;
-  roomIndex: number = 0;
+  depth: number = 0;
+  description: String = "Fuckers in school telling me always in the barber shop \"Chief keef aint bout this chief keef aint bout that\" My boy a BD on fucking lamron and them he he they say that man dont be putting in no work shut the fuck up";
 
 
   @HostListener('window: keydown', ['$event'])
   keyMap(e: any){
-  
-    if(e.keyCode == '38' ){
+    if(e.keyCode == '38' ){ // up arror key
       this.indexSub();
     }
     else if(e.keyCode == '40'){
@@ -56,15 +41,43 @@ roomStartOptions:Array<any> =[
     else if(e.keyCode == '13'){
       
     }
+    else if(e.keyCode == '13'){ // enter key  
+
+      this.enterKey(this.index);
+    }
   }
 
+
+  enterKey(index:number){
+    if ('room' in this.currentRoom.getOptions()[index]){
+      console.log(this.currentRoom.getOptions()[index]['room'])
+      const nextRoomIndex = this.currentRoom.getOptions()[index]['room'];
+      this.resetRoomAndOptions(nextRoomIndex);
+    }
+  }
+
+  reloadDescription(description:String){
+      this.description = description;
+  }
+
+  resetRoomAndOptions(roomNum: number){
+    this.index = 0;
+    this.depth = 0;
+    this.currentRoom = this.rooms[roomNum];
+    this.options = this.currentRoom.getOptions();
+  }
   indexAdd(){
-    this.index++;
+    if(this.index < this.options.length - 1){
+      this.index++;
+    }
   }
   indexSub(){
-    this.index--;
+    if(this.index > 0){
+      this.index--;
+    }
   }
   
+
 
   imageName:String = "castle.gif";
  
