@@ -17,12 +17,11 @@ export class HomeComponent implements OnInit {
   }
 
 
-options: any[] = [{"option": "Option1", "i": 0}, {"option": "Option2", "i": 1},
- {"option": "Option3", "i": 2}, {"option": "Option4", "i": 3}, {"option": "Back", "i": 4}];
+// options: any[] = [{"option": "Option1", "i": 0}, {"option": "Option2", "i": 1},
+//  {"option": "Option3", "i": 2}, {"option": "Option4", "i": 3}, {"option": "Back", "i": 4}];
 
-styles: any[] = [{"toggle": " background-color: #333;color: whitesmoke"}, {"toggle": " background-color: #eeeeee"}]
-  
   rooms = ROOMS;
+  options: any[] = this.rooms[0].getOptions();
 
   draw() {
 
@@ -30,7 +29,6 @@ styles: any[] = [{"toggle": " background-color: #333;color: whitesmoke"}, {"togg
   index: number = 0;
 
   keyMap(e: any){
-   
     if(e.keyCode == '38' ){
       this.indexSub();
       console.log(this.index);
@@ -39,15 +37,23 @@ styles: any[] = [{"toggle": " background-color: #333;color: whitesmoke"}, {"togg
       this.indexAdd();
       console.log(this.index);
     }
+    else if(e.keyCode == '13'){ // enter key
+
+    }
   }
 
   indexAdd(){
-    this.index++;
+    if(this.index < this.options.length){
+      this.index++;
+    }
   }
   indexSub(){
-    this.index--;
+    if(this.index < 0){
+      this.index--;
+    }
   }
   
+
 
   imageName:String = "castle.gif";
  
