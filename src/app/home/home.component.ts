@@ -27,7 +27,6 @@ question:String = "";
   options: any[] = this.currentRoom.getOptions();
   
   index: number = 0;
-  depth: number = 0;
   description: String = this.currentRoom.description!;
 
 
@@ -48,7 +47,6 @@ question:String = "";
 
 
   enterKey(index:number){
-    console.log(this.inventory);
     if ('room' in this.options[index]){
       const nextRoomIndex = this.options[index]['room'];
       this.resetRoomAndOptions(nextRoomIndex);
@@ -86,8 +84,13 @@ question:String = "";
   }
 
   resetRoomAndOptions(roomNum: number){
+    if(roomNum === 7){
+      let audio = new Audio();
+      audio.src = "../../../assets/audio/win.mp3";
+      audio.load();
+      audio.play();
+    }
     this.index = 0;
-    this.depth = 0;
     this.currentRoom = this.rooms[roomNum];
     this.options = this.currentRoom.getOptions().filter(option => !option.hasOwnProperty("label") );
     this.reloadDescription(this.currentRoom.getDescription())
